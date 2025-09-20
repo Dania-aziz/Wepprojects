@@ -16,7 +16,6 @@ def viewbook(request, bookId):
         
     targetBook = None
 
-   # غير طريقة المقارنة هنا:
     if int(bookId) == book1['id']:
         targetBook = book1
     elif int(bookId) == book2['id']:
