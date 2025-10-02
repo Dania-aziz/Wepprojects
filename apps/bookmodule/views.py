@@ -1,25 +1,30 @@
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 def index(request):
-    name = request.GET.get("name") or "world!"
-    return render(request, "bookmodule/index.html", {"name": name})
+    return render(request, "bookmodule/index.html")
 
-def index2(request, val1=0):
-    return HttpResponse("value1 = " + str(val1))
+def list_books(request):
+    return render(request, 'bookmodule/list_books.html')
 
+def aboutus(request):
+    return render(request, 'bookmodule/aboutus.html')
 
 def viewbook(request, bookId):
-    book1 = {'id': 123, 'title': 'Continuous Delivery', 'author': 'J. Humble and D. Farley'}
-    book2 = {'id': 456, 'title': 'Secrets of Reverse Engineering', 'author': 'E. Eilam'}
+    book1 = {'id': 123, 'title': 'Internet & World Wide Web How to Program', 'author': 'author name'}
+    book2 = {'id': 456, 'title': 'C++ How to Program, Late Objects Version', 'author': 'author name'}
+    book3 = {'id': 789, 'title': 'Images in Another Folder', 'author': 'author name'}
 
-        
     targetBook = None
-
-   # غير طريقة المقارنة هنا:
-    if int(bookId) == book1['id']:
+    if book1['id'] == bookId:
         targetBook = book1
-    elif int(bookId) == book2['id']:
+    elif book2['id'] == bookId:
         targetBook = book2
-    context = {'book': targetBook}
-    return render(request, 'bookmodule/show.html', context)
+    elif book3['id'] == bookId:
+        targetBook = book3
+
+    if not targetBook:
+        raise Http404("Book not found")
+
+    return render(request, 'bookmodule/one_book.html', {'book': targetBook})
