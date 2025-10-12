@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 - Listing</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+    <h1>Example of Listing tags</h1>
+
+    <h3>Unordered List (Nested)</h3>
+    <ul>
+        <li>Programming Languages
+            <ul>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+            </ul>
+        </li>
+        <li>Web Technologies
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Ordered List (Nested)</h3>
+    <ol>
+        <li>Frontend Frameworks
+            <ol>
+                <li>React</li>
+                <li>Angular</li>
+                <li>Vue</li>
+            </ol>
+        </li>
+        <li>Backend Frameworks
+            <ol>
+                <li>Django</li>
+                <li>Laravel</li>
+                <li>Spring Boot</li>
+            </ol>
+        </li>
+    </ol>
+
+</body>
+</html>

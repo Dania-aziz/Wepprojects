@@ -2,6 +2,20 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render
 
 
+def tables(request):
+    return render(request, 'books/html5_tables.html')
+
+
+def listing(request):
+    return render(request, 'books/html5_listing.html')
+
+def text_formatting(request):
+    return render(request, 'books/html5_text_formatting.html')
+
+
+def html5_links(request):
+    return render(request, 'books/html5_links.html')
+
 def index(request):
     return render(request, "bookmodule/index.html")
 
