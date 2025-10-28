@@ -2,7 +2,7 @@
 {% block title %} Book List {% endblock title %}
 
 {% block content %}
-<h2>Search results{% if keyword %} for "{{ keyword }}" {% endif %}</h2>
+<h2>Books List</h2>
 
 {% if books %}
     <ul>
@@ -14,5 +14,5 @@
     <p>No books found matching your search.</p>
 {% endif %}
 
-<a href="{% url 'bookmodule:book_search' %}">Back to search</a>
+
 {% endblock content %}

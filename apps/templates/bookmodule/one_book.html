@@ -5,9 +5,9 @@
 
 {% block content %}
     <a href="{% url 'books.list_books' %}">Go Back</a>
-    <h1>Details of Book1</h1>
-    <h2>Internet & World Wide Web How to Program</h2>
-    <h2>Author: author name</h2>
-    <p><strong>Internet & World Wide Web How to Program, 5/e</strong> provides a clear, simple, engaging and entertaining introduction to Internet and web programming.</p>
+    <h1>Details of Book</h1>
+    <h2>{{ book.title }}</h2>
+    <h2>Author: {{ book.author }}</h2>
+    <p><strong>{{ book.title }}</strong> provides a clear, simple, engaging and entertaining introduction to Internet and web programming.</p>
     <img src="{% static 'book1.jpg' %}" alt="Book1 img desc" width="200" height="200">
 {% endblock content %}
