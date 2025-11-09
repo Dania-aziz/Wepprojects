@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+{% block title %} Task 5 — Total Stock per Author {% endblock %}
+
+{% block content %}
+<h2>Task 5 — Total Stock per Author</h2>
+
+<ul>
+{% for author in authors %}
+    <li>{{ author.name }} — Total Stock: {{ author.total_stock }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

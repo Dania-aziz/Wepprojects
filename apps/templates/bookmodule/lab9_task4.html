@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+{% block title %} Task 4 — Average Book Price per Author {% endblock %}
+
+{% block content %}
+<h2>Task 4 — Average Book Price per Author</h2>
+
+<ul>
+{% for author in authors %}
+    <li>{{ author.name }} — Average Price: {{ author.avg_price|floatformat:2 }} SR</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

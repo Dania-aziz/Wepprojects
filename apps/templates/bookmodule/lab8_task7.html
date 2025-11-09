@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Lab 8 - Task 7{% endblock %}
+{% block content %}
+<h2>Number of Students per City</h2>
+<ul>
+{% for c in city_counts %}
+    <li>{{ c.address__city }} — {{ c.student_count }} students</li>
+{% empty %}
+    <p>No data found.</p>
+{% endfor %}
+</ul>
+{% endblock %}

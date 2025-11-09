@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<h2>Task 2 — Total stock per Publisher</h2>
+
+<ul>
+{% for p in publishers %}
+    <li>{{ p.name }} — Total stock: {{ p.total_stock }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

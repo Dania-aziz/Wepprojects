@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Lab 8 - Task 2{% endblock %}
+{% block content %}
+<h2>Books (Edition > 3 and Title/Author contains "co")</h2>
+<ul>
+{% for b in books %}
+    <li>{{ b.title }} — {{ b.author }} — Edition: {{ b.edition }}</li>
+{% empty %}
+    <p>No books found.</p>
+{% endfor %}
+</ul>
+{% endblock %}
